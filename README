@@ -1,0 +1,51 @@
+tooltips
+===============
+Helper for "prototip2" - javascript code for prototype framework, that simple alows create tooltips
+
+Warnings
+===============
+Original "prototip2" is shareware, please visit author page before using this plugin
+http://www.nickstakenburg.com/projects/prototip2/
+
+Features
+===============
+- we can simply create tooltips with helpers methods
+- we can use HTML and javascripts in our tooltips
+
+Installing
+===============
+1) rake tooltips:install
+2) In the head of you layout past this code:
+<% tooltips_include_tag do %>
+  <%= yield(:tips) %>
+<% end %>
+
+Using
+===============
+User tooltip_tag method for creating a tip.
+First param - dom id of object which will be with tip("my_id" in example).
+Second param - hash with params for tip.
+All valid params you can see on prototip2 author page => http://www.nickstakenburg.com/projects/prototip2/
+
+<% tooltip_tag("my_id",                     
+                    :hideAfter => 1,
+                    :delay => 0.2,
+                    :border => 1,
+                    :radius => 1,
+                    :effect => 'appear',
+                    :hook => {:tip => 'topLeft', :target => 'topRight'},
+                    :hideOn => {:element => 'tip', :event => 'mouseout'},
+                    :offset => {:x => -21, :y => 0},
+                    :className => 'default'                    
+          ) do %>
+  Some html and javascript code in our tip
+<% end %>
+
+TODO
+===============
+- making rspec tests
+- making ajax tips
+- making tips by class
+
+Prototip2 (c) Nick Stakenburg "http://www.nickstakenburg.com/projects/prototip2/"
+this plugin (c) 2008 Ivan Garmatenko <garmatenko@nnz.ru>, released under the MIT license

@@ -1,0 +1,3 @@
+sqlite3:
+  :adapter: sqlite3
+  :dbfile: vendor/plugins/opencat_tooltips/spec/db/opencat_tooltips.sqlite3.db
