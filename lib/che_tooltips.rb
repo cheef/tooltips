@@ -1,10 +1,6 @@
 module Che
   
-  module TooltipsRenderer
-    
-    def initialize(template)
-      @template = template
-    end
+  module TooltipsRenderer   
     
     class Tooltip    
       
@@ -54,10 +50,6 @@ module Che
         concat("});", block.binding)
         concat("</script>", block.binding)
       end
-    end
-    
-    def method_missing(*args, &block)
-      @template.send(*args, &block)
     end
     
     private
