@@ -43,12 +43,12 @@ module Che
     
     def tooltips_include_tag(&block)
       if block_given?
-        concat(render_files, block.binding) unless already_used?
-        concat("<script type=\"text/javascript\">", block.binding)
-        concat("document.observe('dom:loaded', function() {", block.binding)
+        concat render_files unless already_used?
+        concat "<script type=\"text/javascript\">"
+        concat "document.observe('dom:loaded', function() {"
         yield || ""
-        concat("});", block.binding)
-        concat("</script>", block.binding)
+        concat "});"
+        concat "</script>"
       end
     end
     
